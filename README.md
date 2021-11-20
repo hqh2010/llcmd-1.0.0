@@ -42,3 +42,23 @@ lintian -c *.changes
 sudo pbuilder login --basetgz /var/cache/pbuilder/stable.tgz --save-after-login
 
 注意deb包源码文件的命名规则：模块名+版本号（llcmd-1.0.0）
+
+# 参考文档
+
+deb包的构建(dpkg-buildpackage)过程详细过程说明
+
+[https://blog.csdn.net/yygydjkthh/article/details/36902781]()
+
+helloworld deb包制作
+
+[https://blog.csdn.net/mountzf/article/details/51863859]()
+
+使用lintian检测制作完成的deb包
+
+[https://blog.csdn.net/qq_33154343/article/details/106366582](https://blog.csdn.net/qq_33154343/article/details/106366582)
+
+Debian制作deb包官方指导
+
+[https://www.debian.org/doc/manuals/maint-guide/index.zh-cn.html](https://www.debian.org/doc/manuals/maint-guide/index.zh-cn.html)
+
+[https://www.debian.org/doc/manuals/debmake-doc/](https://www.debian.org/doc/manuals/debmake-doc/)
