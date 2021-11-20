@@ -31,6 +31,7 @@ sudo pbuilder --build  --logfile log.txt --basetgz /var/cache/pbuilder/stable.tg
 
 
 ＃对生成的deb进行检查
+
 lintian -c *.changes
 
 # 注意事项
