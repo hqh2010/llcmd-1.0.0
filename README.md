@@ -33,6 +33,12 @@ sudo pbuilder --build  --logfile log.txt --basetgz /var/cache/pbuilder/stable.tg
 ＃对生成的deb进行检查
 lintian -c *.changes
 
-说明：最后一步命令实际上调用的是dpkg-buildpackage -rfakeroot
+# 注意事项
+
+最后一步命令实际上调用的是dpkg-buildpackage -rfakeroot
+
+
 登陆纯净环境（登陆后可以安装依赖包\添加仓库源等）
 sudo pbuilder login --basetgz /var/cache/pbuilder/stable.tgz --save-after-login
+
+注意deb包源码文件的命名规则：模块名+版本号（llcmd-1.0.0）
