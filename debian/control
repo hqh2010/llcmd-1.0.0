@@ -1,0 +1,15 @@
+Source: llcmd
+Section: admin
+Priority: optional
+Maintainer: Hu Qinghong <huqinghong@uniontech.com>
+Build-Depends: debhelper (>= 11),libglib2.0-dev
+Standards-Version: 4.1.3
+Homepage: https://packages.debian.org/buster/flatpak
+#Vcs-Browser: https://salsa.debian.org/debian/llcmd
+#Vcs-Git: https://salsa.debian.org/debian/llcmd.git
+
+Package: llcmd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: llcmd demo to display linglong procedure.
+ This package is a make deb demo.
