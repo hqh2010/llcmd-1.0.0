@@ -27,9 +27,9 @@ dpkg-source -b .
 
 cd ..
 
-
+```bash
 sudo pbuilder --build  --logfile log.txt --basetgz /var/cache/pbuilder/stable.tgz --allow-untrusted --hookdir /var/cache/pbuilder/hooks --use-network yes --aptcache "" --buildresult . --debbuildopts -sa *.dsc
-
+```
 
 ＃对生成的deb进行检查
 
@@ -44,6 +44,26 @@ lintian -c *.changes
 sudo pbuilder login --basetgz /var/cache/pbuilder/stable.tgz --save-after-login
 
 注意deb包源码文件的命名规则：模块名+版本号（llcmd-1.0.0）
+
+构建64位打包环境：
+
+```bash
+sudo pbuilder create --mirror "http://pools.uniontech.com/desktop-professional" --distribution "eagle" --basetgz /var/cache/pbuilder/base.tgz --allow-untrusted --debootstrapopts --include=debian-archive-keyring 
+```
+
+参数解释：
+
+--mirror :指定构建仓库
+
+--distribution :指定codename
+
+--basetgz: 指定构建base路径及文件名
+
+--keyring: 指定仓库公钥位置及文件
+
+--include: 添加除debootstrap外自定义软件包列表，用','隔开。
+
+注：如果是构建deepin仓库，因为deepin-keyring不在debootstrap列表，所以必须加到--include里面。不然编译过程因为base环境没有公钥，可能无法使用deepin签名仓库。
 
 # 参考文档
 
