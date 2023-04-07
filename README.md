@@ -23,7 +23,7 @@ dh_make --createorig -sy
 
 dpkg-source -b .
 
-（执行dpkg-source -b .命令后也可以使用dpkg-buildpackage -us -uc -nc基于当前宿主机环境打包，pbuilder是拉一起纯净环境打包）
+（执行dpkg-source -b .命令后也可以使用sudo dpkg-buildpackage -us -uc -nc基于当前宿主机环境打包，pbuilder是拉一起纯净环境打包）
 
 cd ..
 
